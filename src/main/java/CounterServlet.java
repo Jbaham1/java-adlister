@@ -23,7 +23,7 @@ public class CounterServlet extends HttpServlet {
 
         PrintWriter out = res.getWriter();
 
-        out.println("<h1> You are guest number: "+hitCount +"</h1>"
+        out.println("<h1> You are guest number: "+ hitCount +"</h1>"
         );
     }
 }
