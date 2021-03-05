@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
     <title>Profile</title>
-
+<%@include file="partials/head.jsp"%>
 </head>
 <body>
 <%@include file="partials/navbar.jsp"%>
@@ -13,6 +13,6 @@
     <c:out value="Admin Profile"></c:out>
 </h1>
 
-<script src="js/main.js"></script>
+<%@include file="partials/scripts.jsp"%>
 </body>
 </html>

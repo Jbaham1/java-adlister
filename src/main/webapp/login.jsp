@@ -10,6 +10,7 @@
 </head>
 <body>
 <%@include file="partials/navbar.jsp"%>
+
 <c:choose>
     <c:when test="${param.username.equalsIgnoreCase('admin') && param.password.equalsIgnoreCase('password')}">
         <c:redirect url="profile.jsp"/>
@@ -19,7 +20,7 @@
     </c:otherwise>
 </c:choose>
 
-<form method="POST" action="">
+<form method="POST" action="http://localhost:8080/login.jsp">
 
     <label for="username">Username</label>
     <input id="username" name="username" type="text" placeholder="username">
@@ -29,7 +30,7 @@
     <input id="password" name="password" type="password" placeholder="password" required>
     <br>
 
-    <input id="login" type="submit">
+    <input id="login" type="submit" value="Login">
 </form>
 
 
