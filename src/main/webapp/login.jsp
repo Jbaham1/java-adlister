@@ -9,6 +9,7 @@
     <title>Login</title>
 </head>
 <body>
+<%@include file="partials/navbar.jsp"%>
 <c:choose>
     <c:when test="${param.username.equalsIgnoreCase('admin') && param.password.equalsIgnoreCase('password')}">
         <c:redirect url="profile.jsp"/>
@@ -32,6 +33,6 @@
 </form>
 
 
-<script src="js/main.js"></script>
+<%@ include file="partials/scripts.jsp"%>
 </body>
 </html>

@@ -8,8 +8,9 @@
 
 </head>
 <body>
+<%@include file="partials/navbar.jsp"%>
 <h1>
-    YOUR ADMIN PROFILE
+    <c:out value="Admin Profile"></c:out>
 </h1>
 
 <script src="js/main.js"></script>
