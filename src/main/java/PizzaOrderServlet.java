@@ -9,18 +9,23 @@ import java.io.IOException;
 public class PizzaOrderServlet extends HttpServlet{
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        request.getRequestDispatcher("pizza-order").forward(request, response);
+    }
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)throws IOException, ServletException{
         String crust = request.getParameter("crust");
         String sauce = request.getParameter("sauce");
         String size = request.getParameter("size");
         String[] topping = request.getParameterValues("topping");
+        String address = request.getParameter("address");
 
-        request.setAttribute("size", size);
-        request.setAttribute("crust", crust);
-        request.setAttribute("sauce", sauce);
-        request.setAttribute("topping", topping);
-        request.getRequestDispatcher("pizza-order.jsp").forward(request, response);
+
 
         System.out.println("You have chosen " + size +" "+ crust +" "+  "with " +" and the following toppings;" );
+
+        for (String s : topping) {
+            System.out.println(s);
+        }
+        System.out.println("address:" + address);
 
     }
 }

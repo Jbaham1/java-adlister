@@ -15,7 +15,7 @@
 <%@include file="partials/navbar.jsp" %>
 
 
-<form action="/pizza-order" method="post">
+<form action="http://localhost:808/pizza-order" method="post">
     <label for="size">Size: </label>
     <select name="size" id="size">
         <option value="small">Small</option>
@@ -42,10 +42,16 @@
     <br>
     <label for="pepperoni">Pepperoni</label>
     <input type="checkbox" name="topping" id="pepperoni" value="pepperoni">
+    <br>
     <label for="sausage">Sausage</label>
     <input type="checkbox" name="topping" id="sausage" value="sausage">
+    <br>
     <label for="veggie">Veggie</label>
     <input type="checkbox" name="topping" id="veggie" value="veggie">
+    <br>
+    <br>
+    <label for="address">Address:</label>
+    <input type="text" name="address" id="address">
     <br>
     <br>
     <button type="submit">Order my pizza!</button>
