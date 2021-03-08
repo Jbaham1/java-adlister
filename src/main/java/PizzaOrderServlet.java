@@ -12,10 +12,15 @@ public class PizzaOrderServlet extends HttpServlet{
         String crust = request.getParameter("crust");
         String sauce = request.getParameter("sauce");
         String size = request.getParameter("size");
+        String[] topping = request.getParameterValues("topping");
 
+        request.setAttribute("size", size);
         request.setAttribute("crust", crust);
         request.setAttribute("sauce", sauce);
-        request.setAttribute("size", size);
-        request.getRequestDispatcher("pizzaOrderServlet.jsp").forward(request, response);
+        request.setAttribute("topping", topping);
+        request.getRequestDispatcher("pizza-order.jsp").forward(request, response);
+
+        System.out.println("You have chosen " + size +" "+ crust +" "+  "with " +" and the following toppings;" );
+
     }
 }
