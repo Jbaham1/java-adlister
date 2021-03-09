@@ -12,8 +12,6 @@ public class Book {
 //    empty constructor
     public Book(){};
 // constructor with all fields
-
-
     public Book(int id, String title, String authorsName, Float price, int booksSold) {
         this.id = id;
         this.title = title;
