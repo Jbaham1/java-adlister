@@ -11,9 +11,6 @@ public class PickColorServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         req.getRequestDispatcher("/color-app/pickcolor.jsp").forward(req, res);
     }
-    protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        String favoriteColor = req.getParameter("favorite_color");
-        req.sendRedirect("viewcolor?favorite_color")
-    }
+
 
 }
