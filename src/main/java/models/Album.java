@@ -1,34 +1,35 @@
-import java.util.ArrayList;
+package models;
 
 public class Album {
+
     private int id;
     private String artist;
     private String name;
-    private int release_date;
+    private int releaseDate;
     private Float sales;
     private String genre;
 
-    public Album(){};
+    public Album(){}
 
-    public Album(int id, String artist, String name, int release_date, Float sales, String genre) {
+    public Album(int id, String artist, String name, int releaseDate, Float sales, String genre) {
         this.id = id;
         this.artist = artist;
         this.name = name;
-        this.release_date = release_date;
+        this.releaseDate = releaseDate;
         this.sales = sales;
         this.genre = genre;
     }
 
-    public int getId() {
-        return this.id;
+    public int getId(){
+        return id;
     }
 
-    public void setId(int id) {
+    public void setId(int id){
         this.id = id;
     }
 
     public String getArtist() {
-        return this.artist;
+        return artist;
     }
 
     public void setArtist(String artist) {
@@ -43,16 +44,16 @@ public class Album {
         this.name = name;
     }
 
-    public int getRelease_date() {
-        return this.release_date;
+    public int getReleaseDate() {
+        return releaseDate;
     }
 
-    public void setRelease_date(int release_date) {
-        this.release_date = release_date;
+    public void setReleaseDate(int releaseDate) {
+        this.releaseDate = releaseDate;
     }
 
     public Float getSales() {
-        return this.sales;
+        return sales;
     }
 
     public void setSales(Float sales) {
@@ -60,12 +61,10 @@ public class Album {
     }
 
     public String getGenre() {
-        return this.genre;
+        return genre;
     }
 
     public void setGenre(String genre) {
         this.genre = genre;
     }
-
-    ArrayList<Album> albums = new ArrayList<>();
 }
