@@ -1,4 +1,3 @@
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -6,14 +5,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name="PickColorServlet", urlPatterns = "/pickcolor")
+@WebServlet("/pickcolor")
 public class PickColorServlet extends HttpServlet {
-    protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        req.getRequestDispatcher("/color-app/pickcolor.jsp").forward(req, res);
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
+        request.getRequestDispatcher("/pickColor.jsp").forward(request,response);
     }
-    protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        String favoriteColor = req.getParameter("favorite_color");
-        req.sendRedirect("viewcolor?favorite_color")
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        String favoriteColor = request.getParameter("favorite_color");
+
+        response.sendRedirect("/viewcolor?favorite_color=" + favoriteColor);
     }
 
 }
