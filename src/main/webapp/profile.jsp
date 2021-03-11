@@ -15,7 +15,7 @@
 
 </head>
 <body>
-<jsp:include page="partials/nav.jsp" />
+<jsp:include page="partials/navbar.jsp" />
 
 <main class="container">
 
