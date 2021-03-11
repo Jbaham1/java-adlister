@@ -9,31 +9,51 @@
     <title>Login</title>
 </head>
 <body>
-<%@include file="partials/navbar.jsp"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+    <%
+    String wrongCredentialsMessage = "";
+    if (request.getMethod().equals("POST")) {
+        if (request.getParameter("username").equals("admin") && request.getParameter("userPassword").equals("password")) {
+            response.sendRedirect("/profile.jsp?username=" + request.getParameter("username"));
+        }
+        wrongCredentialsMessage = "Username or Password Invalid";
+    }
+%>
+<html>
+<head>
+    <title>Login</title>
+    <jsp:include page="partials/styleSheets.jsp" />
 
-<c:choose>
-    <c:when test="${param.username.equalsIgnoreCase('admin') && param.password.equalsIgnoreCase('password')}">
-        <c:redirect url="profile.jsp"/>
-    </c:when>
-    <c:otherwise>
-        <h3><c:out value="Please Login"/></h3>
-    </c:otherwise>
-</c:choose>
+</head>
+<body>
+<jsp:include page="partials/nav.jsp" />
 
-<form method="POST" action="http://localhost:8080/login.jsp">
-
-    <label for="username">Username</label>
-    <input id="username" name="username" type="text" placeholder="username">
-    <br>
-
-    <label for="password">Password</label>
-    <input id="password" name="password" type="password" placeholder="password" required>
-    <br>
-
-    <input id="login" type="submit" value="Login">
-</form>
+<main class="container">
 
 
-<%@ include file="partials/scripts.jsp"%>
+    <h2>Login Form</h2>
+
+
+    <form method="POST" action="/login.jsp">
+
+
+        <p class="red-text"><%=wrongCredentialsMessage%></p>
+        <label for="username">Username</label>
+        <input name="username" id="username" type="text">
+
+        <br>
+
+        <label for="userPassword">Password</label>
+        <input name="userPassword" id="userPassword" type="password">
+
+        <br>
+
+        <input type="submit" value="Login">
+
+    </form>
+
+</main>
+
+<jsp:include page="partials/scripts.jsp" />
 </body>
 </html>
