@@ -1,59 +1,34 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<% request.setAttribute("username", "admin"); %>
-<% request.setAttribute("password", "password"); %>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Login</title>
-</head>
-<body>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-    <%
-    String wrongCredentialsMessage = "";
-    if (request.getMethod().equals("POST")) {
-        if (request.getParameter("username").equals("admin") && request.getParameter("userPassword").equals("password")) {
-            response.sendRedirect("/profile.jsp?username=" + request.getParameter("username"));
+<%
+    if (request.getMethod().equalsIgnoreCase("post")) {
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        if (username.equals("admin") && password.equals("password")) {
+            response.sendRedirect("/profile");
         }
-        wrongCredentialsMessage = "Username or Password Invalid";
     }
 %>
 <html>
 <head>
-    <title>Login</title>
-    <jsp:include page="partials/styleSheets.jsp" />
-
+    <jsp:include page="partials/head.jsp">
+        <jsp:param name="title" value="Please Log In" />
+    </jsp:include>
 </head>
 <body>
 <jsp:include page="partials/navbar.jsp" />
-
-<main class="container">
-
-
-    <h2>Login Form</h2>
-
-
-    <form method="POST" action="/login.jsp">
-
-
-        <p class="red-text"><%=wrongCredentialsMessage%></p>
-        <label for="username">Username</label>
-        <input name="username" id="username" type="text">
-
-        <br>
-
-        <label for="userPassword">Password</label>
-        <input name="userPassword" id="userPassword" type="password">
-
-        <br>
-
-        <input type="submit" value="Login">
-
+<div class="container">
+    <h1>Please Log In</h1>
+    <form action="/login.jsp" method="POST">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input id="username" name="username" class="form-control" type="text">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input id="password" name="password" class="form-control" type="password">
+        </div>
+        <input type="submit" class="btn btn-primary btn-block" value="Log In">
     </form>
-
-</main>
-
-<jsp:include page="partials/scripts.jsp" />
+</div>
 </body>
 </html>
