@@ -11,7 +11,7 @@
 <html>
 <head>
     <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Viewing All The Ads" />
+        <jsp:param name="title" value="Viewing All The com.codeup.adlister.dao.Ads" />
     </jsp:include>
 </head>
 <body>
