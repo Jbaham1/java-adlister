@@ -7,14 +7,12 @@ import java.util.List;
 
 public class ListAdsDao implements Ads {
     private List<Ad> ads;
-
     public List<Ad> all() {
         if (ads == null) {
             ads = generateAds();
         }
         return ads;
     }
-
     public Long insert(Ad ad) {
         // make sure we have ads
         if (ads == null) {
@@ -26,7 +24,6 @@ public class ListAdsDao implements Ads {
         ads.add(ad);
         return ad.getId();
     }
-
     private List<Ad> generateAds() {
         List<Ad> ads = new ArrayList<>();
         ads.add(new Ad(
@@ -46,6 +43,12 @@ public class ListAdsDao implements Ads {
                 2,
                 "Junior Java Developer Position",
                 "Minimum 7 years of experience required. You will be working in the scripting language for Java, JavaScript"
+        ));
+        ads.add(new Ad(
+                4,
+                2,
+                "JavaScript Developer needed",
+                "Must have strong Java skills"
         ));
         ads.add(new Ad(
                 4,
