@@ -1,3 +1,10 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: jeremiahbaham
+  Date: 3/15/21
+  Time: 11:50 AM
+  To change this template use File | Settings | File Templates.
+--%>
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -6,6 +13,7 @@
         </div>
         <ul class="nav navbar-nav navbar-right">
             <li><a href="/login">Login</a></li>
+            <li><a href="/logout">Logout</a></li>
         </ul>
     </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
