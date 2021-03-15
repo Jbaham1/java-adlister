@@ -14,9 +14,7 @@
 
 
 <style>
-    body {
-        background-color: ${favoriteColor}
-    }
+    body {background-color: ${favoriteColor}}
 </style>
 </body>
 </html>
